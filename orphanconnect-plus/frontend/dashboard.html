@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - OrphanConnect+</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-heart"></i>
+                <span>OrphanConnect+</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                <li><a href="donate.html"><i class="fas fa-hand-holding-heart"></i>Donations</a></li>
+                <li><a href="food.html"><i class="fas fa-utensils"></i>Food Sharing</a></li>
+                <li><a href="blood.html"><i class="fas fa-tint"></i>Blood Donation</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Welcome back, <span id="userName">User</span>!</h1>
+                <div class="user-info">
+                    <span id="userRole">Donor</span>
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalDonations">0</h3>
+                        <p>Total Donations</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="foodShared">0</h3>
+                        <p>Food Items Shared</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="bloodDonations">0</h3>
+                        <p>Blood Donations</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="livesImpacted">0</h3>
+                        <p>Lives Impacted</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <section class="recent-activities">
+                    <h2>Recent Activities</h2>
+                    <div class="activity-list" id="activityList">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                </section>
+
+                <section class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-grid">
+                        <a href="donate.html" class="action-card">
+                            <i class="fas fa-donate"></i>
+                            <h3>Make Donation</h3>
+                            <p>Donate to orphanages</p>
+                        </a>
+                        <a href="food.html" class="action-card">
+                            <i class="fas fa-plus"></i>
+                            <h3>Share Food</h3>
+                            <p>List surplus food</p>
+                        </a>
+                        <a href="blood.html" class="action-card">
+                            <i class="fas fa-heartbeat"></i>
+                            <h3>Donate Blood</h3>
+                            <p>Register for donation</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

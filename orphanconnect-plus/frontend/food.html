@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Sharing - OrphanConnect+</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-heart"></i>
+                <span>OrphanConnect+</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                <li><a href="donate.html"><i class="fas fa-hand-holding-heart"></i>Donations</a></li>
+                <li class="active"><a href="food.html"><i class="fas fa-utensils"></i>Food Sharing</a></li>
+                <li><a href="blood.html"><i class="fas fa-tint"></i>Blood Donation</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Food Sharing</h1>
+                <button class="btn btn-primary" onclick="showFoodModal()">
+                    <i class="fas fa-plus"></i> Share Food
+                </button>
+            </header>
+
+            <div class="content-tabs">
+                <button class="tab-btn active" onclick="showTab('available')">Available Food</button>
+                <button class="tab-btn" onclick="showTab('my-listings')">My Listings</button>
+            </div>
+
+            <div id="available-tab" class="tab-content active">
+                <div class="food-listings" id="availableFoodListings">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+
+            <div id="my-listings-tab" class="tab-content">
+                <div class="food-listings" id="myFoodListings">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Food Sharing Modal -->
+    <div id="foodModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Share Surplus Food</h2>
+                <span class="close" onclick="closeFoodModal()">&times;</span>
+            </div>
+            <form id="foodForm">
+                <div class="form-group">
+                    <label for="foodTitle">Food Title</label>
+                    <input type="text" id="foodTitle" name="title" required placeholder="e.g., Wedding Surplus Food">
+                </div>
+                
+                <div class="form-group">
+                    <label for="foodDescription">Description</label>
+                    <textarea id="foodDescription" name="description" rows="3" placeholder="Describe the food items..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="text" id="quantity" name="quantity" required placeholder="e.g., 50 plates, 10kg rice">
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Pickup Location</label>
+                    <input type="text" id="location" name="location" required placeholder="Full address with landmarks">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pickupTime">Pickup Time</label>
+                        <input type="datetime-local" id="pickupTime" name="pickup_time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expiryTime">Best Before</label>
+                        <input type="datetime-local" id="expiryTime" name="expiry_time" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary full-width">Share Food</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/food.js"></script>
+</body>
+</html>
